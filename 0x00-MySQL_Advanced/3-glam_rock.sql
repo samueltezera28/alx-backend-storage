@@ -1,5 +1,4 @@
--- a SQL script that lists all bands with Glam rock as their main style, ranked by their longevity
-SELECT band_name, (IFNULL(split, NOW()) - formed) AS lifespan
-    FROM metal_bands
-    WHERE FIND_IN_SET('Glam rock', IFNULL(style, "")) > 0
-    ORDER BY lifespan DESC;
+-- A sql script that lists out bands based on their logevity
+SELECT `band_name`, COALESCE(`split`, 2022) - `formed` AS lifespan FROM metal_bands 
+WHERE `style` like '%Glam rock%' 
+ORDER BY lifespan DESC;
