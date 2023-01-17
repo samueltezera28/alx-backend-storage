@@ -1,0 +1,2 @@
+//You can change or create a new database by typing use then the name of the database.
+use my_db;
